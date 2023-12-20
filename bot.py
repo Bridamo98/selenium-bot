@@ -2,10 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from time import sleep
 
+windows_chrome_driver_path = 'C:\\Users\\briam\\Downloads\\chromedriver-win64\\chromedriver.exe'
+linux_chrome_driver_path = '/usr/bin/chromedriver'
 url = 'https://www.365scores.com/es/news/premios-365-scores-mejor-jugador/'
-chrome_driver_path = '/usr/bin/chromedriver'
+chrome_driver_path = windows_chrome_driver_path # change this
 service = webdriver.ChromeService(executable_path = chrome_driver_path)
 driver = webdriver.Chrome(service=service)
 driver.get(url)
@@ -26,13 +27,13 @@ def click_radio_button():
 
         driver.switch_to.frame(frame)
 
-        sleep(1)
+        # sleep(1)
 
         radio_button = WebDriverWait(driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, radio_button_selector))
         )
 
-        sleep(1)
+        # sleep(1)
 
         radio_button.click()
 
@@ -42,7 +43,7 @@ def click_radio_button():
             EC.visibility_of_element_located((By.XPATH, choose_selector))
         )
 
-        sleep(1)
+        # sleep(1)
 
         choose_button.click()
 
@@ -67,7 +68,7 @@ def click_radio_button():
         print("- Refreshing...")
 
 attempts = 0
-while attempts < 500:
+while attempts < 1000:
     i = click_radio_button()
     checked+=i
     attempts+=1
