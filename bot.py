@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 
-windows_chrome_driver_path = 'C:\\Users\\briam\\Downloads\\chromedriver-win64\\chromedriver.exe'
+windows_chrome_driver_path = '.\\driver\\chromedriver.exe'
 linux_chrome_driver_path = '/usr/bin/chromedriver'
 url = 'https://www.365scores.com/es/news/premios-365-scores-mejor-jugador/'
 chrome_driver_path = windows_chrome_driver_path # change this
